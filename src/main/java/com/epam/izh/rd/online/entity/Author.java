@@ -18,6 +18,7 @@ import java.time.LocalDate;
  * 6) Переопределить метод toString с выводом всех полей (не забывайте alt+inset)
  */
 public class Author {
+    private String name;
     private  String lastName;   //1) Создать список полей с указанными типами ровно в этом порядке
     private LocalDate birthdate;
     private String country;
@@ -25,10 +26,19 @@ public class Author {
     public Author() {
     }
 
-    public Author(String lastName, LocalDate birthdate, String country) {
+    public Author(String name, String lastName, LocalDate birthdate, String country) {
+        this.name = name;
         this.lastName = lastName;
         this.birthdate = birthdate;
         this.country = country;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getLastName() {

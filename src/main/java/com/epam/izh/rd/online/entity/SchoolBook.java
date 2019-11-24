@@ -22,12 +22,18 @@ import java.util.Objects;
 public class SchoolBook extends Book {
     private String authorName;
     private String authorLastName;
-    private String publishDate;
+    private LocalDate publishDate;
 
     public SchoolBook() {
     }
 
-    public SchoolBook(int numberOfPages, String name, String authorName, String authorLastName, String publishDate) {
+    public SchoolBook(String authorName, String authorLastName, LocalDate publishDate) {
+        this.authorName = authorName;
+        this.authorLastName = authorLastName;
+        this.publishDate = publishDate;
+    }
+
+    public SchoolBook(int numberOfPages, String name, String authorName, String authorLastName, LocalDate publishDate) {
         super(numberOfPages, name);
         this.authorName = authorName;
         this.authorLastName = authorLastName;
@@ -50,11 +56,11 @@ public class SchoolBook extends Book {
         this.authorLastName = authorLastName;
     }
 
-    public String getPublishDate() {
+    public LocalDate getPublishDate() {
         return publishDate;
     }
 
-    public void setPublishDate(String publishDate) {
+    public void setPublishDate(LocalDate publishDate) {
         this.publishDate = publishDate;
     }
 }
