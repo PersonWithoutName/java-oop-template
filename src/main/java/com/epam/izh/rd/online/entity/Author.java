@@ -1,7 +1,6 @@
 package com.epam.izh.rd.online.entity;
 
 import java.time.LocalDate;
-import java.util.Objects;
 
 /**
  * Класс содержащий информацию об авторе.
@@ -19,5 +18,40 @@ import java.util.Objects;
  * 6) Переопределить метод toString с выводом всех полей (не забывайте alt+inset)
  */
 public class Author {
+    private  String lastName;   //1) Создать список полей с указанными типами ровно в этом порядке
+    private LocalDate birthdate;
+    private String country;
 
+    public Author() {
+    }
+
+    public Author(String lastName, LocalDate birthdate, String country) {
+        this.lastName = lastName;
+        this.birthdate = birthdate;
+        this.country = country;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public LocalDate getBirthdate() {
+        return birthdate;
+    }
+
+    public void setBirthdate(LocalDate birthdate) {
+        this.birthdate = birthdate;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
 }

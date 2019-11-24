@@ -16,5 +16,28 @@ import java.util.Objects;
  * 6) Переопределить метод toString с выводом всех полей (не забывайте alt+inset)
  */
 public abstract class Book {
+    private int numberOfPages; //1)Создать список полей с указанными типами
+    private String name;
 
+    public Book() {             //2)Создать дефолтный конструктор (без параметров)
+    }
+
+    public Book(int numberOfPages, String name) {//3)Создать конструктор со всеми параметрами
+        this.numberOfPages = numberOfPages;     //(в том порядке в котором перечислены)
+        this.name = name;
+    }
+
+    public int getNumberOfPages() { return numberOfPages; }
+
+    public void setNumberOfPages(int numberOfPages) {
+        this.numberOfPages = numberOfPages;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
