@@ -56,12 +56,31 @@ public class SchoolBook extends Book {
         this.authorLastName = authorLastName;
     }
 
-    public LocalDate getPublishDate() {
-        return publishDate;
+    public LocalDate getPublishDate() { return publishDate; }
+
+    public void setPublishDate(LocalDate publishDate) { this.publishDate = publishDate; }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+
+        SchoolBook that = (SchoolBook) o;
+
+        if (authorName != null ? !authorName.equals(that.authorName) : that.authorName != null) return false;
+        if (authorLastName != null ? !authorLastName.equals(that.authorLastName) : that.authorLastName != null)
+            return false;
+        return publishDate != null ? publishDate.equals(that.publishDate) : that.publishDate == null;
     }
 
-    public void setPublishDate(LocalDate publishDate) {
-        this.publishDate = publishDate;
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (authorName != null ? authorName.hashCode() : 0);
+        result = 31 * result + (authorLastName != null ? authorLastName.hashCode() : 0);
+        result = 31 * result + (publishDate != null ? publishDate.hashCode() : 0);
+        return result;
     }
 }
 

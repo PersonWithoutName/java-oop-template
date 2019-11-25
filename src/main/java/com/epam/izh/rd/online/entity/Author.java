@@ -1,6 +1,7 @@
 package com.epam.izh.rd.online.entity;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 /**
  * Класс содержащий информацию об авторе.
@@ -19,7 +20,7 @@ import java.time.LocalDate;
  */
 public class Author {
     private String name;
-    private  String lastName;   //1) Создать список полей с указанными типами ровно в этом порядке
+    private  String lastName;
     private LocalDate birthdate;
     private String country;
 
@@ -63,5 +64,27 @@ public class Author {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Author author = (Author) o;
+
+        if (name != null ? !name.equals(author.name) : author.name != null) return false;
+        if (lastName != null ? !lastName.equals(author.lastName) : author.lastName != null) return false;
+        if (birthdate != null ? !birthdate.equals(author.birthdate) : author.birthdate != null) return false;
+        return country != null ? country.equals(author.country) : author.country == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
+        result = 31 * result + (birthdate != null ? birthdate.hashCode() : 0);
+        result = 31 * result + (country != null ? country.hashCode() : 0);
+        return result;
     }
 }
