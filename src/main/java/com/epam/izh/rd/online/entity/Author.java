@@ -5,7 +5,7 @@ import java.util.Objects;
 
 /**
  * Класс содержащий информацию об авторе.
- *
+ * <p>
  * Необходимо:
  * 1) Создать список полей с указанными типами ровно в этом порядке:
  * - name с типом String и приватным модификатором доступа
@@ -20,7 +20,7 @@ import java.util.Objects;
  */
 public class Author {
     private String name;
-    private  String lastName;
+    private String lastName;
     private LocalDate birthdate;
     private String country;
 
@@ -86,5 +86,15 @@ public class Author {
         result = 31 * result + (birthdate != null ? birthdate.hashCode() : 0);
         result = 31 * result + (country != null ? country.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Author{" +
+                "name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", birthdate=" + birthdate +
+                ", country='" + country + '\'' +
+                '}';
     }
 }

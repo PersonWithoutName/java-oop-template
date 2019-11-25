@@ -1,8 +1,11 @@
 package com.epam.izh.rd.online.repository;
 
 import com.epam.izh.rd.online.entity.Book;
+import com.epam.izh.rd.online.entity.SchoolBook;
 
 public class SimpleSchoolBookRepository implements BookRepository{
+   private SchoolBook[] schoolBooks = {};
+
     @Override
     public boolean save(Book book) {
         return false;

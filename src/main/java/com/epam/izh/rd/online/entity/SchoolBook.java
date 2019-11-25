@@ -82,5 +82,14 @@ public class SchoolBook extends Book {
         result = 31 * result + (publishDate != null ? publishDate.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "SchoolBook{" +
+                "authorName='" + authorName + '\'' +
+                ", authorLastName='" + authorLastName + '\'' +
+                ", publishDate=" + publishDate +
+                '}';
+    }
 }
 
