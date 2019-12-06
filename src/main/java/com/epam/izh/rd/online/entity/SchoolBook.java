@@ -56,22 +56,26 @@ public class SchoolBook extends Book {
         this.authorLastName = authorLastName;
     }
 
-    public LocalDate getPublishDate() { return publishDate; }
+    public LocalDate getPublishDate() {
+        return publishDate;
+    }
 
-    public void setPublishDate(LocalDate publishDate) { this.publishDate = publishDate; }
+    public void setPublishDate(LocalDate publishDate) {
+        this.publishDate = publishDate;
+    }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        if (!super.equals(obj)) return false;
 
-        SchoolBook that = (SchoolBook) o;
+        SchoolBook that = (SchoolBook) obj;
 
-        if (authorName != null ? !authorName.equals(that.authorName) : that.authorName != null) return false;
-        if (authorLastName != null ? !authorLastName.equals(that.authorLastName) : that.authorLastName != null)
+        if (!Objects.equals(authorName, that.authorName)) return false;
+        if (!Objects.equals(authorLastName, that.authorLastName))
             return false;
-        return publishDate != null ? publishDate.equals(that.publishDate) : that.publishDate == null;
+        return Objects.equals(publishDate, that.publishDate);
     }
 
     @Override
